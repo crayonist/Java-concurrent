@@ -1,4 +1,4 @@
-###　**线程创建的方式：**
+**线程创建的方式：**
 - 1.继承Thread类
 - 2.实现Runable接口
 - 3.实现Callable接口（FutureTask的方式）
