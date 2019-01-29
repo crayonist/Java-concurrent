@@ -41,6 +41,7 @@
       竞争该锁，只有该线程竞争到了共享变量的监视器锁后才可继续执行。
     + 同wait()，只有当前线程获取到了共享变量的监视器锁后，才可以调用共
       享变量的notify()，否则会抛出 IllegalMonitorStateException 异常。
+    
     2 notifyAll()：唤醒所有wait()等待线程
 - 虚假唤醒：
     + 一个线程在wait阻塞等待的状态下，除了其他线程调用notify、notifyAll，也可能会变为运行状态，称为虚假唤醒。
