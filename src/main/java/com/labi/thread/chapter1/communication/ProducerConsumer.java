@@ -1,4 +1,4 @@
-package com.labi.thread.communication;
+package com.labi.thread.chapter1.communication;
 
 import java.util.concurrent.LinkedBlockingDeque;
 
@@ -17,11 +17,11 @@ public class ProducerConsumer {
             int i = 0;
             while (true) {
                 synchronized (queue) {
-                    // Ïû·Ñ¶ÓÁĞÂú£¬ÔòµÈ´ı¶ÓÁĞ¿ÕÏĞ
+                    // æ¶ˆè´¹é˜Ÿåˆ—æ»¡ï¼Œåˆ™ç­‰å¾…é˜Ÿåˆ—ç©ºé—²
                     while (queue.size() == MAX_SIZE) {
                         try {
-                            // ¹ÒÆğµ±Ç°Ïß³Ì£¬²¢ÊÍ·ÅÍ¨¹ıÍ¬²½¿é»ñÈ¡µÄqueueÉÏµÄËø£¬ÈÃÏû·ÑÕßÏß³Ì¿ÉÒÔ»ñÈ¡¸ÃËø£¬È»ºó»ñÈ¡¶ÓÁĞÀïÃæµÄÔªËØ
-                            // ×¢Òâ£ºµ±Ç°Ïß³Ìµ÷ÓÃ¹²Ïí±äÁ¿µÄwait()ºóÖ»»áÊÍ·Åµ±Ç°¹²Ïí±äÁ¿ÉÏµÄËø£¬Èç¹ûµ±Ç°Ïß³Ì»¹³ÖÓĞÆäËû¹²Ïí±äÁ¿µÄËø£¬ÕâĞ©ËøÊÇ²»»á±»ÊÍ·ÅµÄ¡£
+                            // æŒ‚èµ·å½“å‰çº¿ç¨‹ï¼Œå¹¶é‡Šæ”¾é€šè¿‡åŒæ­¥å—è·å–çš„queueä¸Šçš„é”ï¼Œè®©æ¶ˆè´¹è€…çº¿ç¨‹å¯ä»¥è·å–è¯¥é”ï¼Œç„¶åè·å–é˜Ÿåˆ—é‡Œé¢çš„å…ƒç´ 
+                            // æ³¨æ„ï¼šå½“å‰çº¿ç¨‹è°ƒç”¨å…±äº«å˜é‡çš„wait()ååªä¼šé‡Šæ”¾å½“å‰å…±äº«å˜é‡ä¸Šçš„é”ï¼Œå¦‚æœå½“å‰çº¿ç¨‹è¿˜æŒæœ‰å…¶ä»–å…±äº«å˜é‡çš„é”ï¼Œè¿™äº›é”æ˜¯ä¸ä¼šè¢«é‡Šæ”¾çš„ã€‚
                             queue.wait();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
@@ -54,13 +54,13 @@ public class ProducerConsumer {
                         }
                     }
                     try {
-                        // Ïû·Ñ¶ÓÁĞÔªËØ
+                        // æ¶ˆè´¹é˜Ÿåˆ—å…ƒç´ 
                         queue.take();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                     System.out.println("The consumer consume "+ i++ +" product.");
-                    // Ïû·ÑÍêÍ¨Öª»½ĞÑÉú²úÕßÏß³Ì
+                    // æ¶ˆè´¹å®Œé€šçŸ¥å”¤é†’ç”Ÿäº§è€…çº¿ç¨‹
                     queue.notify();
                 }
             }

@@ -1,4 +1,4 @@
-package com.labi.thread.interrupt;
+package com.labi.thread.chapter1.interrupt;
 
 /**
  * 根据中断标志判断线程是否终止

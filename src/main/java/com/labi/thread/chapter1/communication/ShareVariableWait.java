@@ -1,9 +1,9 @@
-package com.labi.thread.communication;
+package com.labi.thread.chapter1.communication;
 
 /**
- * µ±Ç°Ïß³Ìµ÷ÓÃ¹²Ïí±äÁ¿µÄwait()ºóÖ»»áÊÍ·Åµ±Ç°¹²Ïí±äÁ¿ÉÏµÄËø£¬Èç¹ûµ±Ç°Ïß³Ì»¹³ÖÓĞÆäËû¹²Ïí±äÁ¿µÄËø£¬ÕâĞ©ËøÊÇ²»»á±»ÊÍ·ÅµÄ¡£
- * ¿´ÈçÏÂÀı×Ó£º
- *    Ïß³Ì£Á¹ÒÆğºó²¢Ã»ÓĞÊÍ·Å»ñÈ¡´óµ½µÄResourceBÉÏµÄËø£¬ËùÒÔÏß³Ì£Â³¢ÊÔ»ñÈ¡resourceBÉÏµÄËø»á±»×èÈû¡£
+ * å½“å‰çº¿ç¨‹è°ƒç”¨å…±äº«å˜é‡çš„wait()ååªä¼šé‡Šæ”¾å½“å‰å…±äº«å˜é‡ä¸Šçš„é”ï¼Œå¦‚æœå½“å‰çº¿ç¨‹è¿˜æŒæœ‰å…¶ä»–å…±äº«å˜é‡çš„é”ï¼Œè¿™äº›é”æ˜¯ä¸ä¼šè¢«é‡Šæ”¾çš„ã€‚
+ * çœ‹å¦‚ä¸‹ä¾‹å­ï¼š
+ *    çº¿ç¨‹ï¼¡æŒ‚èµ·åå¹¶æ²¡æœ‰é‡Šæ”¾è·å–å¤§åˆ°çš„ResourceBä¸Šçš„é”ï¼Œæ‰€ä»¥çº¿ç¨‹ï¼¢å°è¯•è·å–resourceBä¸Šçš„é”ä¼šè¢«é˜»å¡ã€‚
  */
 public class ShareVariableWait {
 
@@ -14,14 +14,14 @@ public class ShareVariableWait {
 
         Thread threadA = new Thread(() -> {
             try {
-                // »ñÈ¡resourceA×ÊÔ´µÄ¼àÊÓÆ÷Ëø
+                // è·å–resourceAèµ„æºçš„ç›‘è§†å™¨é”
                 synchronized (resourceA) {
                     System.out.println("threadA get resourceA lock");
-                    // »ñÈ¡resourceB¹²Ïí×ÊÔ´µÄ¼àÊÓÆ÷Ëø
+                    // è·å–resourceBå…±äº«èµ„æºçš„ç›‘è§†å™¨é”
                     synchronized (resourceB) {
                         System.out.println("threadA get resourceB lock");
 
-                        // Ïß³ÌA×èÈû£¬²¢ÊÍ·Å»ñÈ¡µ½µÄresourceAµÄËø
+                        // çº¿ç¨‹Aé˜»å¡ï¼Œå¹¶é‡Šæ”¾è·å–åˆ°çš„resourceAçš„é”
                         System.out.println("threadA release resourceA lock");
                         resourceA.wait();
                     }
@@ -34,15 +34,15 @@ public class ShareVariableWait {
         Thread threadB = new Thread(() -> {
             try {
                 Thread.sleep(1000);
-                // »ñÈ¡resourceA×ÊÔ´µÄ¼àÊÓÆ÷Ëø
+                // è·å–resourceAèµ„æºçš„ç›‘è§†å™¨é”
                 synchronized (resourceA) {
                     System.out.println("threadB get resourceA lock");
                     System.out.println("threadB try to get resourceB lock...");
-                    // »ñÈ¡resourceB¹²Ïí×ÊÔ´µÄ¼àÊÓÆ÷Ëø
+                    // è·å–resourceBå…±äº«èµ„æºçš„ç›‘è§†å™¨é”
                     synchronized (resourceB) {
                         System.out.println("threadB get resourceB lock");
 
-                        // Ïß³ÌB×èÈû£¬²¢ÊÍ·Å»ñÈ¡µ½µÄresourceAµÄËø
+                        // çº¿ç¨‹Bé˜»å¡ï¼Œå¹¶é‡Šæ”¾è·å–åˆ°çš„resourceAçš„é”
                         System.out.println("threadB release resourceA lock");
                         resourceA.wait();
                     }
@@ -52,11 +52,11 @@ public class ShareVariableWait {
             }
         });
 
-        // Æô¶¯Ïß³Ì
+        // å¯åŠ¨çº¿ç¨‹
         threadA.start();
         threadB.start();
 
-        // µÈ´ıÁ½¸öÏß³Ì½áÊø
+        // ç­‰å¾…ä¸¤ä¸ªçº¿ç¨‹ç»“æŸ
         threadA.join();
         threadB.join();
 

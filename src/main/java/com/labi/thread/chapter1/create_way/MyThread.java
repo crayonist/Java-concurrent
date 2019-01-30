@@ -1,4 +1,4 @@
-package com.labi.thread.create_way;
+package com.labi.thread.chapter1.create_way;
 
 public class MyThread extends Thread {
 
