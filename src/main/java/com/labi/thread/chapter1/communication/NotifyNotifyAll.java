@@ -1,4 +1,4 @@
-package com.labi.thread.communication;
+package com.labi.thread.chapter1.communication;
 
 /**
  * notify:只能唤醒一个共享变量wait的线程
