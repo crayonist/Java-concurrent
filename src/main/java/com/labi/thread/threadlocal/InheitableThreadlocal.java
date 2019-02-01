@@ -1,5 +1,6 @@
 package com.labi.thread.threadlocal;
 
+
 /**
  * InheritableThreadLocal继承自ThreadLocal,其提供了一个特性，就是让子线程可以访问在父线程中设置的本地变量
  */
