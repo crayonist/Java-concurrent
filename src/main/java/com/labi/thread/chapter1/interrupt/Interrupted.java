@@ -1,4 +1,4 @@
-package com.labi.thread.interrupt;
+package com.labi.thread.chapter1.interrupt;
 
 /**
  * 调用 interrupted()方法后中断标志被清除了

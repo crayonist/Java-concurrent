@@ -1,7 +1,4 @@
-package com.labi.thread.communication;
-
-import java.util.concurrent.BlockingDeque;
-import java.util.concurrent.LinkedBlockingDeque;
+package com.labi.thread.chapter1.communication;
 
 public class WaitNotify {
 

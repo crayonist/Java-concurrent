@@ -1,4 +1,4 @@
-package com.labi.thread.deadlock;
+package com.labi.thread.chapter1.deadlock;
 
 public class DeadLock {
 

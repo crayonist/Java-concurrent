@@ -1,4 +1,4 @@
-package com.labi.thread.interrupt;
+package com.labi.thread.chapter1.interrupt;
 
 /**
  * 在interrupted()方法内部是获取当前线程的中断状态，这里虽然

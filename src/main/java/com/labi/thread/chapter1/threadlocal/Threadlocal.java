@@ -1,4 +1,4 @@
-package com.labi.thread.threadlocal;
+package com.labi.thread.chapter1.threadlocal;
 
 public class Threadlocal {
 

@@ -1,4 +1,4 @@
-package com.labi.thread.frequent_func;
+package com.labi.thread.chapter1.frequent_func;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

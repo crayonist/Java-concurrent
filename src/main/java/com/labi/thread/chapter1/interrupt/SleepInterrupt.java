@@ -1,4 +1,4 @@
-package com.labi.thread.interrupt;
+package com.labi.thread.chapter1.interrupt;
 
 /**
  * 当线程为了等待一些特定条件的到来时，一般会调用sleep函数 wait 系列函数或者 join 函数来阻塞挂起当前线程。
